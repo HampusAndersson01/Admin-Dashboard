@@ -1,4 +1,4 @@
-# Admin Dashboard Example (WIP)
+# Admin Dashboard Example (WIP) [![wakatime](https://wakatime.com/badge/user/930ea802-b645-4cd7-9d41-dec5aef42231/project/018b5958-5e04-47a0-9e56-005d777c8cf3.svg)](https://wakatime.com/badge/user/930ea802-b645-4cd7-9d41-dec5aef42231/project/018b5958-5e04-47a0-9e56-005d777c8cf3)
 
 This project is an example of an Admin Dashboard built with React.js and TypeScript. It serves as a starting point for creating data-rich web applications with a user-friendly admin interface.
 
