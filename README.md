@@ -22,7 +22,7 @@ Follow these steps to get a local copy of the project up and running.
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/admin-dashboard-example.git
+git clone https://github.com/hampusandersson01/admin-dashboard.git
 ```
 
 
