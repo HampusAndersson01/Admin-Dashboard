@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: grid;
+  grid-template-columns: 15vw 85vw;
+  grid-template-rows: 10vh 90vh;
+  grid-template-areas:
+    "header header"
+    "aside main";
+}
+/* header */
+header {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  grid-area: header;
+}
+#headerLogo {
+  height: 100%;
+  width: calc(10vh - 2rem);
+}
+#Profile {
+  width: 20vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#Profile img {
+  width: calc(10vh - 2rem);
+  height: calc(10vh - 2rem);
+  border-radius: 50%;
+}
+.headerRight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ASide */
+aside {
+  width: 15vw;
+  height: 90vh;
+  min-width: 250px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: aside;
+}
+.asideLink > a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+  height: 5vh;
+}
+.asideLink svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Main */
+#main {
+  width: 85vw;
+  height: 90vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: main;
+}
+
+/* Login */
+#login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login select {
+  display: block; /* Ensure the select takes up the full width */
+  width: 30vw;
+  height: 5vh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+#login button {
+  width: 30vw;
+  height: 5vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #0074d9;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+}

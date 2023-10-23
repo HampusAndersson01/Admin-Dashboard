@@ -6,6 +6,8 @@ export const users = [
     email: "john.doe@email.com",
     role: "Admin",
     registrationDate: "2022-01-15",
+    imageUrl: "JohnDoe.jpg"
+    
   },
   {
     id: 2,
@@ -13,6 +15,8 @@ export const users = [
     email: "jane.smith@email.com",
     role: "Moderator",
     registrationDate: "2022-03-20",
+    imageUrl: "JaneSmith.jpg"
+    
   },
   {
     id: 3,
@@ -20,6 +24,7 @@ export const users = [
     email: "michael.johnson@email.com",
     role: "Customer",
     registrationDate: "2022-05-10",
+    imageUrl: "MichaelJohnson.jpg"
   },
 ];
 
