@@ -21,18 +21,19 @@ Follow these steps to get a local copy of the project up and running.
 ### Installation
 
 1. Clone the repository:
+
 ```
 git clone https://github.com/hampusandersson01/admin-dashboard.git
 ```
 
-
 2. Navigate to the project folder:
-```
-cd admin-dashboard-example
-```
 
+```
+cd admin-dashboard
+```
 
 3. Install project dependencies:
+
 ```
 npm install
 ```
