@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AsideLink } from "../Styles";
+import { NavLink } from "react-router-dom";
 import "../Style.css";
 
 // Icons
@@ -12,9 +12,9 @@ import SettingsSharpIcon from "@mui/icons-material/SettingsSharp";
 import InventorySharpIcon from "@mui/icons-material/InventorySharp";
 
 // Styles
-import { Logo, Button } from "../Styles";
+import { Logo, Button, StyledNavLink, AsideLink } from "../Styles";
 
-//Components
+// Components
 import Profile from "./Profile";
 
 // Context
@@ -41,62 +41,84 @@ const Layout: React.FC<layoutProps> = ({ toggleTheme }) => {
       </header>
       <aside>
         <AsideLink className="asideLink" id="dashboardLink">
-          <Link to="">
+          <StyledNavLink to="">
             <DashboardSharpIcon />
             <h2>Dashboard</h2>
-          </Link>
+          </StyledNavLink>
         </AsideLink>
 
-        <AsideLink className="asideLink" id="historyLink">
-          <Link to="history">
-            <TimelineSharpIcon />
-            <h2>History</h2>
-          </Link>
-        </AsideLink>
+        {currentUser ? ( // If a user is logged in
+          <>
+            <AsideLink className="asideLink" id="historyLink">
+              <StyledNavLink to="history">
+                <TimelineSharpIcon />
+                <h2>History</h2>
+              </StyledNavLink>
+            </AsideLink>
 
-        <AsideLink className="asideLink" id="inventoryLink">
-          <Link to="inventory">
-            <InventorySharpIcon />
-            <h2>Inventory</h2>
-          </Link>
-        </AsideLink>
+            <AsideLink className="asideLink" id="inventoryLink">
+              <StyledNavLink to="inventory">
+                <InventorySharpIcon />
+                <h2>Inventory</h2>
+              </StyledNavLink>
+            </AsideLink>
 
-        <AsideLink className="asideLink" id="usersLink">
-          <Link to="users">
-            <PersonSharpIcon />
-            <h2>Users</h2>
-          </Link>
-        </AsideLink>
+            <AsideLink className="asideLink" id="usersLink">
+              <StyledNavLink to="users">
+                <PersonSharpIcon />
+                <h2>Users</h2>
+              </StyledNavLink>
+            </AsideLink>
+          </>
+        ) : (
+          // Replace with empty AsideLink when no user is logged in
+          <>
+            <AsideLink className="asideLink" id="historyLink">
+              <AsideLink>
+                
+              </AsideLink>
+            </AsideLink>
+
+            <AsideLink className="asideLink" id="inventoryLink">
+              <AsideLink>
+                
+              </AsideLink>
+            </AsideLink>
+
+            <AsideLink className="asideLink" id="usersLink">
+              <AsideLink>
+               
+              </AsideLink>
+            </AsideLink>
+          </>
+        )}
 
         <AsideLink className="asideLink" id="settingsLink">
-          <Link to="settings">
+          <StyledNavLink to="settings">
             <SettingsSharpIcon />
             <h2>Settings</h2>
-          </Link>
+          </StyledNavLink>
         </AsideLink>
 
-        {
-          // If logged in, show logout, else show login
-          currentUser !== null ? (
-            <AsideLink
-              onClick={handleLogout}
-              className="asideLink"
-              id="logoutLink"
-            >
-              <Link to={""}>
-                <LogoutSharpIcon />
-                <h2>Logout</h2>
-              </Link>
-            </AsideLink>
-          ) : (
-            <AsideLink className="asideLink" id="loginLink">
-              <Link to="login">
-                <LoginSharpIcon />
-                <h2>Login</h2>
-              </Link>
-            </AsideLink>
-          )
-        }
+        {currentUser ? ( // If a user is logged in
+          <AsideLink
+            onClick={handleLogout}
+            className="asideLink"
+            id="logoutLink"
+          >
+            <Link to={""}>
+              <LogoutSharpIcon />
+              <h2>Logout</h2>
+            </Link>
+          </AsideLink>
+        ) : (
+          <AsideLink className="asideLink" id="loginLink">
+            <StyledNavLink to="login">
+              <LoginSharpIcon />
+              <h2>Login</h2>
+            </StyledNavLink>
+          </AsideLink>
+        )}
       </aside>
     </>
   );

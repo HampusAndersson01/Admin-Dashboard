@@ -1,6 +1,6 @@
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const darkTheme = {
   colors: {
@@ -79,5 +79,11 @@ export const LoginButton = styled.button`
   font-size: ${(props) => props.theme.fontSizes.medium};
   &:hover {
     background-color: ${(props) => props.theme.colors.hover};
+  }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  &.active {
+    color: ${(props) => props.theme.colors.hover};
   }
 `;

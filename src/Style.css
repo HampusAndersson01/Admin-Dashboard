@@ -54,6 +54,9 @@ aside {
   justify-content: space-evenly;
   grid-area: aside;
 }
+.asideLink{
+  height: 5vh;
+}
 .asideLink > a {
   color: inherit;
   text-decoration: none;
@@ -62,11 +65,15 @@ aside {
   justify-content: space-between;
   padding: 0 2rem;
   width: 100%;
-  height: 5vh;
+  height: 100%
 }
 .asideLink svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+.asideLink .active {
+  background: inherit;
+
 }
 
 /* Main */
