@@ -23,7 +23,8 @@ header {
 }
 #headerLogo {
   height: 100%;
-  width: calc(10vh - 2rem);
+  overflow: visible;
+  user-select: none;
 }
 #Profile {
   width: 20vh;
