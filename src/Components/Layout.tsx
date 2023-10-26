@@ -26,7 +26,7 @@ type layoutProps = {
   theme: any;
 };
 
-const Layout: React.FC<layoutProps> = ({ toggleTheme,theme }) => {
+const Layout: React.FC<layoutProps> = ({ toggleTheme, theme }) => {
   const { currentUser, setCurrentUser } = useUser();
   const handleLogout = () => {
     setCurrentUser(null);
@@ -38,7 +38,7 @@ const Layout: React.FC<layoutProps> = ({ toggleTheme,theme }) => {
         <Logo id="headerLogo" src="logo.png" alt="Home" />
         <div className="headerRight">
           <ThemeSwitch toggleTheme={toggleTheme} theme={theme} />
-          <Profile></Profile>
+          {currentUser ? <Profile></Profile> : <></>}
         </div>
       </header>
       <aside>
