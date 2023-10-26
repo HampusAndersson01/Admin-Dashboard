@@ -16,15 +16,17 @@ import { Logo, Button, StyledNavLink, AsideLink } from "../Styles";
 
 // Components
 import Profile from "./Profile";
+import ThemeSwitch from "./ThemeSwitch";
 
 // Context
 import { useUser } from "../context/UserContext";
 
 type layoutProps = {
   toggleTheme: () => void;
+  theme: any;
 };
 
-const Layout: React.FC<layoutProps> = ({ toggleTheme }) => {
+const Layout: React.FC<layoutProps> = ({ toggleTheme,theme }) => {
   const { currentUser, setCurrentUser } = useUser();
   const handleLogout = () => {
     setCurrentUser(null);
@@ -35,7 +37,7 @@ const Layout: React.FC<layoutProps> = ({ toggleTheme }) => {
       <header>
         <Logo id="headerLogo" src="logo.png" alt="Home" />
         <div className="headerRight">
-          <Button onClick={toggleTheme}>Toggle Theme</Button>
+          <ThemeSwitch toggleTheme={toggleTheme} theme={theme} />
           <Profile></Profile>
         </div>
       </header>
@@ -74,21 +76,15 @@ const Layout: React.FC<layoutProps> = ({ toggleTheme }) => {
           // Replace with empty AsideLink when no user is logged in
           <>
             <AsideLink className="asideLink" id="historyLink">
-              <AsideLink>
-                
-              </AsideLink>
+              <AsideLink></AsideLink>
             </AsideLink>
 
             <AsideLink className="asideLink" id="inventoryLink">
-              <AsideLink>
-                
-              </AsideLink>
+              <AsideLink></AsideLink>
             </AsideLink>
 
             <AsideLink className="asideLink" id="usersLink">
-              <AsideLink>
-               
-              </AsideLink>
+              <AsideLink></AsideLink>
             </AsideLink>
           </>
         )}

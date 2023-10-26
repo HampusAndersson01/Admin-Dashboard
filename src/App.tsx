@@ -37,7 +37,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <UserProvider>
-          <Layout toggleTheme={toggleTheme} />
+          <Layout toggleTheme={toggleTheme} theme={theme} />
           <div id="main">
             <Routes>
               <Route path="/" element={<Dashboard />} />
